@@ -1,7 +1,5 @@
 package homework2;
 
-import java.util.Arrays;
-
 public class MatrixMultiplication { 
 	
 	public static void main(String[] args) {
@@ -14,25 +12,27 @@ public class MatrixMultiplication {
 		printMatrix(a);
 		System.out.println("Matrix B = ");
 		printMatrix(b);
-		System.out.println("Matrix A*B = ");
+		if (isValidForMultiplication(a, b)) {
+			System.out.println("Matrix A*B = ");
 		c = multiplyMatrixes(a, b);
 		printMatrix(c);
+		} else {
+			System.out.println("This matrixes can't be multiplied");
+		}
+	}
+
+	private static boolean isValidForMultiplication(double[][] a, double[][] b) {
+		return (a[0].length == b.length);
 	}
 
 	private static double[][] multiplyMatrixes(double[][] a, double[][] b) {
-		if (a[0].length == b.length) {
-			double[][] result = new double[a.length][b[0].length];
-			for (int i = 0; i < result.length; i++) {
-				for (int j = 0; j < result[i].length; j++) {
-					result[i][j] = calculateElement(a, b, i, j);
-				}
+		double[][] result = new double[a.length][b[0].length];
+		for (int i = 0; i < result.length; i++) {
+			for (int j = 0; j < result[i].length; j++) {
+				result[i][j] = calculateElement(a, b, i, j);
 			}
-			return result;
-		} else {
-			System.out.println("This matrixes can't be multiplied");
-			return null;
 		}
-		
+		return result;		
 	}
 
 	private static double calculateElement(double[][] a, double[][] b, int iIndex, int jIndex) {
