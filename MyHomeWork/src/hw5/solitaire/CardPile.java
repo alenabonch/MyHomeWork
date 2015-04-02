@@ -37,7 +37,7 @@ class CardPile {
 		}
 	}
 
-	public boolean empty() {
+	public boolean isEmpty() {
 		return firstCard == null;
 	}
 
@@ -65,7 +65,7 @@ class CardPile {
 
     public int countCards(CardPile cardPile) {
         int count = 0;
-        if (cardPile.empty()) {
+        if (cardPile.isEmpty()) {
             return 0;
         }
         if (cardPile.firstCard != null) {

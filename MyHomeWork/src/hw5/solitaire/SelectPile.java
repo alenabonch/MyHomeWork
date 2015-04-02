@@ -7,7 +7,7 @@ public class SelectPile extends CardPile {
 	}
 	
 	public void select(final int tx, final int ty) {
-		if (empty()) {
+		if (isEmpty()) {
 			return;
 		}
 		// else see if any suit pile can take card

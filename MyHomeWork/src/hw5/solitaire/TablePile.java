@@ -18,7 +18,7 @@ class TablePile extends SelectPile {
 	}
 
 	public boolean canTake(final Card aCard) {
-		if (empty()) {
+		if (isEmpty()) {
 			return aCard.isKing();
 		}
 		Card topCard = top();

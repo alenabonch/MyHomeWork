@@ -7,7 +7,7 @@ class SuitPile extends CardPile {
 	}
 
 	public boolean canTake(final Card aCard) {
-		if (empty()) {
+		if (isEmpty()) {
 			return aCard.isAce();
 		}
 		Card topCard = top();

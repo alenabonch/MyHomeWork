@@ -26,16 +26,30 @@ class DeckPile extends CardPile {
 			// then add the card found there
 			addCard(pileOne.pop());
 			// then put the decks back together
-			while (!pileTwo.empty()) {
+			while (!pileTwo.isEmpty()) {
 				pileOne.addCard(pileTwo.pop());
 			}
 		}
 	}
 
 	public void select(final int tx, final int ty) {
-		if (empty()) {
+		if (isEmpty()) {
+            returnCardsToDeckPile();
 			return;
 		}
 		Solitaire.discardPile.addCard(pop());
 	}
+
+    private void returnCardsToDeckPile() {
+        while (!Solitaire.discardPile.isEmpty()) {
+            addCardWithFaceDown(Solitaire.discardPile.pop());
+        }
+    }
+
+    private void addCardWithFaceDown(final Card aCard) {
+        if (aCard.isFaceUp()) {
+            aCard.flip();
+        }
+        super.addCard(aCard);
+    }
 }

@@ -13,6 +13,5 @@ class DiscardPile extends SelectPile {
 		super.addCard(aCard);
 	}
 
-//	public void select(final int tx, final int ty) {		
-//	}
+
 }
