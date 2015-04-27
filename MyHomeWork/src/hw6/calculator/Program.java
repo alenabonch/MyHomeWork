@@ -12,22 +12,20 @@ public class Program {
 
 	}
 	
-	private void analyzeAndExecute(String[] data) {		
-		
-		int rightNumber;	
-		
+	private void analyzeAndExecute(String[] data) {	
+		int rightNumber;
 		try {
-			calculator.total = Integer.parseInt(data[0]);	
-			
+			calculator.total = Integer.parseInt(data[0]);
 			for (int i = 1; i < data.length; i++) {				
 				
 				if (isCommand(data[i]) && i < data.length-1) {
 					rightNumber = Integer.parseInt(data[i+1]);
 					makeCommand(data[i], rightNumber);
-                    i += 1;                    
+                    			i += 1;   
+                    			
 				} else if (isCommand(data[i]) && i == data.length-1) {
-                    makeCommand(data[i], 0);
-                }
+                    			makeCommand(data[i], 0);
+                		}
 			}
 		} catch(NumberFormatException e) {
 			System.err.println("Incorrect expression, check the input data");
