@@ -30,7 +30,7 @@ public class RomanNumeralsTest {
                 {78, "LXXVIII"},
                 {89, "LXXXIX"},
                 {100, "C"},
-                {1000, "M"},
+                {1001, "MI"},
                 {1055, "MLV"},
         });
     }
